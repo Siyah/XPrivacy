@@ -429,37 +429,20 @@ public class ActivityApp extends Activity {
 	}
 
 	private void optionAccounts() {
-		if (Util.getLicense() == null) {
-			// Redirect to pro page
-			Intent browserIntent = new Intent(Intent.ACTION_VIEW, ActivityMain.cProUri);
-			startActivity(browserIntent);
-		} else {
+
 			AccountsTask accountsTask = new AccountsTask();
 			accountsTask.executeOnExecutor(mExecutor, (Object) null);
-		}
-	}
 
 	private void optionApplications() {
-		if (Util.getLicense() == null) {
-			// Redirect to pro page
-			Intent browserIntent = new Intent(Intent.ACTION_VIEW, ActivityMain.cProUri);
-			startActivity(browserIntent);
-		} else {
+
 			ApplicationsTask appsTask = new ApplicationsTask();
 			appsTask.executeOnExecutor(mExecutor, (Object) null);
-		}
-	}
+
 
 	private void optionContacts() {
-		if (Util.getLicense() == null) {
-			// Redirect to pro page
-			Intent browserIntent = new Intent(Intent.ACTION_VIEW, ActivityMain.cProUri);
-			startActivity(browserIntent);
-		} else {
+
 			ContactsTask contactsTask = new ContactsTask();
 			contactsTask.executeOnExecutor(mExecutor, (Object) null);
-		}
-	}
 
 	private void optionLaunch() {
 		Intent intentLaunch = getPackageManager().getLaunchIntentForPackage(mAppInfo.getPackageName());
