@@ -432,18 +432,21 @@ public class ActivityApp extends Activity {
 
 			AccountsTask accountsTask = new AccountsTask();
 			accountsTask.executeOnExecutor(mExecutor, (Object) null);
+			
+	}
 
 	private void optionApplications() {
 
 			ApplicationsTask appsTask = new ApplicationsTask();
 			appsTask.executeOnExecutor(mExecutor, (Object) null);
-
+	}
 
 	private void optionContacts() {
 
 			ContactsTask contactsTask = new ContactsTask();
 			contactsTask.executeOnExecutor(mExecutor, (Object) null);
-
+	}
+	
 	private void optionLaunch() {
 		Intent intentLaunch = getPackageManager().getLaunchIntentForPackage(mAppInfo.getPackageName());
 		startActivity(intentLaunch);
